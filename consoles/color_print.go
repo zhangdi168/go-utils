@@ -15,5 +15,5 @@ import (
 // / @param title 标题
 // / @param colorContent 红色内容
 func PrintlnRed(title string, RedContent string) {
-	vfmt.Printf("%s @[::%s]", title, RedContent, consts.ColorRed)
+	vfmt.Printf("%s @[%s::%s]", title, RedContent, consts.ColorRed)
 }
