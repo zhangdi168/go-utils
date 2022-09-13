@@ -5,8 +5,14 @@
 // @Date: 2022/9/13 13:03
 package consoles
 
-import "testing"
+import (
+	"github.com/zhangdi168/go-utils/consts"
+	"testing"
+)
 
 func TestColor(t *testing.T) {
-	PrintlnRed("h", "saas")
+	error := PrintlnColor("你好", consts.ColorRed, "世界", consts.ColorBlue)
+	if error != nil {
+		println(error.Error())
+	}
 }
