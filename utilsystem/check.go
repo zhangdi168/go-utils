@@ -22,3 +22,31 @@ func IsWindowsSystem() bool {
 
 	return false
 }
+
+func IsMacOs() bool {
+	sysType := runtime.GOOS
+
+	if sysType == "darwin" {
+		// LMAC系统
+		return true
+	} else {
+
+		return false
+	}
+
+	return false
+}
+
+func IsLinuxSystem() bool {
+	sysType := runtime.GOOS
+
+	if sysType == "linux" {
+		// LINUX系统
+		return true
+	} else {
+
+		return false
+	}
+
+	return false
+}
