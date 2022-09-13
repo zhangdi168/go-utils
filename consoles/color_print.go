@@ -1,9 +1,9 @@
-// Package console
+// Package consoles
 // @Author: zhangdi
 // @File: color
 // @Version: 1.0.0
 // @Date: 2022/9/13 10:39
-package console
+package consoles
 
 import (
 	"github.com/vua/vfmt"
