@@ -1,4 +1,4 @@
-module github.com/zhangdi168/go-utils/
+module github.com/zhangdi168/go-utils
 
 go 1.19
 
