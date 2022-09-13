@@ -1,4 +1,4 @@
-module go-utils
+module gitee.com/zhangdi168/go-utils/
 
 go 1.19
 
