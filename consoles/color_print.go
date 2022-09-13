@@ -7,7 +7,7 @@ package consoles
 
 import (
 	"github.com/vua/vfmt"
-	"go-utils/consts"
+	"github.com/zhangdi168/go-utils/consts"
 )
 
 // PrintlnRed
