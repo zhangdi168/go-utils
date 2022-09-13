@@ -1,8 +1,12 @@
-// Package tools /**
-package tools
+// Package utiltime Package go-utils
+// @Author: zhangdi
+// @Version: 1.0.0
+// @Date: 2022/9/13 10:05
+package utiltime
 
 import (
 	"fmt"
+	"github.com/zhangdi168/go-utils/utilerror"
 	"math"
 	"strconv"
 	"strings"
@@ -76,7 +80,7 @@ func GetSubTime(t1 time.Time) (string, bool) {
 //	@param dateStr
 //	@return time.Time
 func DateStrToTime(dateStr string) time.Time {
-	defer GetErrorRecover()
+	defer utilerror.GetErrorRecover()
 	var t1 time.Time
 	if strings.Contains(dateStr, ":") {
 		t1, _ = time.ParseInLocation("2006-01-02 15:04:05", dateStr, time.Local)

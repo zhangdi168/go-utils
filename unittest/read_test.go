@@ -5,14 +5,16 @@
  * @Date: 2022/8/27 15:13
  * @Software : GoLand
  */
-package configs
+package unittest
 
 import (
+	"encoding/json"
+	"github.com/zhangdi168/go-utils/utilconfig"
 	"testing"
 )
 
 func TestRead(t *testing.T) {
-	println(Conf.Wechat.Appid)
+	println(utilconfig.Conf.Wechat.Appid)
 }
 
 func TestJson(t *testing.T) {

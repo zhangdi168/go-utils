@@ -1,19 +1,20 @@
-// Package cache /**
-package cache
+// Package utilcache
+// @Author: zhangdi
+// @Version: 1.0.0
+// @Date: 2022/9/13 10:05
+package utilcache
 
 import (
-	"WechatSend/utils/tools"
 	"encoding/json"
+	"github.com/zhangdi168/go-utils/utilerror"
+	"github.com/zhangdi168/go-utils/utilfile"
+	"github.com/zhangdi168/go-utils/utiljson"
 	"os"
 	"time"
 )
 
 func InitFileCache() {
 	data := readJson()
-	//if data == nil {
-	//	println("解析json文件失败")
-	//	return
-	//}
 	if data == nil {
 		data = make(map[string]string)
 	}
@@ -52,7 +53,7 @@ func (f fileCache) TimeSet(k string, v string, exTime int64) {
 }
 
 func (f fileCache) Get(k string) string {
-	defer tools.GetErrorRecover()
+	defer utilerror.GetErrorRecover()
 	item, ok := f.Data[k]
 	if !ok {
 		//不存在key
@@ -76,11 +77,11 @@ func (f fileCache) Get(k string) string {
 // @Description: 读取文件缓存中的所有数据
 // @return map[string]string
 func readJson() map[string]string {
-	jsonStr := tools.ReadContent("cache.json", os.O_CREATE|os.O_RDONLY)
+	jsonStr := utilfile.ReadContent("cache.json", os.O_CREATE|os.O_RDONLY)
 	if jsonStr == nil {
 		return nil
 	}
-	data := tools.JsonToMap(jsonStr)
+	data := utiljson.JsonToMap(jsonStr)
 	return data
 }
 
@@ -88,12 +89,12 @@ func readJson() map[string]string {
 // @Description: 将map的数据写入文件缓存
 // @return int 返回写入成功的字节数
 func writeJson(data map[string]string) int {
-	jsonBytes := tools.MapToJson(data)
+	jsonBytes := utiljson.MapToJson(data)
 	if jsonBytes == nil {
 		return 0
 	}
 	//O_TRUNC覆盖写入
-	n := tools.WriteContent("cache.json", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, jsonBytes)
+	n := utilfile.WriteContent("cache.json", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, jsonBytes)
 	return n
 
 }

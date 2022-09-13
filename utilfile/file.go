@@ -1,5 +1,8 @@
-// Package tools /**
-package tools
+// Package utilfile  go-utils
+// @Author: zhangdi
+// @Version: 1.0.0
+// @Date: 2022/9/13 10:05
+package utilfile
 
 import (
 	"fmt"

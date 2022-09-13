@@ -1,7 +1,9 @@
-// Package cache /**
-package cache
+// Package utilcache
+// @Author: zhangdi
+// @Version: 1.0.0
+// @Date: 2022/9/13 10:05
+package utilcache
 
-var _ ICache = &goCache{}
 var _ ICache = &fileCache{}
 
 type ICache interface {

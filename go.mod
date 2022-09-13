@@ -4,7 +4,9 @@ go 1.19
 
 require (
 	github.com/gonutz/ide v0.0.0-20200517034207-df64a3832118
+	github.com/rogpeppe/go-internal v1.9.0
 	github.com/vua/vfmt v0.0.0-20210409080011-d29875fad92c
+	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c
 )
 
 require (

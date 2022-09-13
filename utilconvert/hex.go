@@ -1,11 +1,8 @@
-// Package tools
-/**@Author: zhangdi
- * @File: hex
- * @Version: 1.0.0
- * @Date: 2022/9/2 10:16
- * @Software : GoLand
- */
-package tools
+// Package utilconvert  go-utils
+// @Author: zhangdi
+// @Version: 1.0.0
+// @Date: 2022/9/13 10:05
+package utilconvert
 
 import "strings"
 

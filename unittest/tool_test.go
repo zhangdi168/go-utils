@@ -5,11 +5,15 @@
  * @Date: 2022/8/28 0:01
  * @Software : GoLand
  */
-package tools
+package unittest
 
 import (
 	"fmt"
 	"github.com/gonutz/ide/w32"
+	"github.com/zhangdi168/go-utils/utilconvert"
+	"github.com/zhangdi168/go-utils/utilfile"
+	"github.com/zhangdi168/go-utils/utiljson"
+	"github.com/zhangdi168/go-utils/utiltime"
 	"os"
 	"testing"
 	"time"
@@ -35,11 +39,7 @@ func ShowConsoleAsync(commandShow uintptr) {
 	}
 }
 func TestMain1(t *testing.T) {
-	WriteContent("1.txt", os.O_CREATE|os.O_WRONLY, []byte("hello123\n121213"))
-}
-func TestRead(t *testing.T) {
-	s := ReadContent("1.txt", os.O_CREATE|os.O_RDONLY)
-	println(string(s))
+	utilfile.WriteContent("1.txt", os.O_CREATE|os.O_WRONLY, []byte("hello123\n121213"))
 }
 
 func TestMapTojson(t *testing.T) {
@@ -48,14 +48,14 @@ func TestMapTojson(t *testing.T) {
 	data["b"] = "1"
 	data["c"] = "2"
 
-	s := MapToJson(data)
+	s := utiljson.MapToJson(data)
 
 	println(string(s))
 }
 
 func TestJsonToMap(t *testing.T) {
 	json := `{"a":"1","b":"1","c":"2"}`
-	m := JsonToMap([]byte(json))
+	m := utiljson.JsonToMap([]byte(json))
 	print(m)
 }
 
@@ -63,8 +63,8 @@ func TestTime(t *testing.T) {
 	dateStr := "2022-07-04"
 	//dateStr := "2022-08-28 12:00:00"
 	var t1 time.Time
-	t1 = DateStrToTime(dateStr)
-	s, isNextTime := GetSubTime(t1)
+	t1 = utiltime.DateStrToTime(dateStr)
+	s, isNextTime := utiltime.GetSubTime(t1)
 	if isNextTime {
 		fmt.Printf("距离%v还有%v", dateStr, s)
 	} else {
@@ -103,7 +103,7 @@ func TestTicker(t *testing.T) {
 //	@Description: 测试每天定时执行
 //	@param t
 func TestDayTimeDo(t *testing.T) {
-	StartTimer("20:33", doSomething)
+	utiltime.StartTimer("20:33", doSomething)
 }
 
 func doSomething() {
@@ -151,7 +151,7 @@ func TestSub(t *testing.T) {
 func TestHex(t *testing.T) {
 	s := "zhnagdi"
 
-	r := HexToBytes(s)
+	r := utilconvert.HexToBytes(s)
 	println(r)
 	t.Logf("16进制 %v", r)
 

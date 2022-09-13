@@ -1,14 +1,14 @@
-// Package consoles
+// Package utilconsole
 // @Author: zhangdi
 // @File: color
 // @Version: 1.0.0
 // @Date: 2022/9/13 10:39
-package consoles
+package utilconsole
 
 import (
 	"errors"
 	"github.com/vua/vfmt"
-	"github.com/zhangdi168/go-utils/consts"
+	"github.com/zhangdi168/go-utils/utilcolor"
 )
 
 // PrintlnRed
@@ -16,7 +16,7 @@ import (
 // / @param title 标题
 // / @param colorContent 红色内容
 func PrintlnRed(title string, RedContent string) {
-	vfmt.Printf("%s @[%s::%s]\n", title, RedContent, consts.ColorRed)
+	vfmt.Printf("%s @[%s::%s]\n", title, RedContent, utilcolor.ColorRed)
 }
 
 // PrintlnGreen
@@ -24,7 +24,7 @@ func PrintlnRed(title string, RedContent string) {
 // / @param title 标题
 // / @param colorContent 绿色内容
 func PrintlnGreen(title string, RedContent string) {
-	vfmt.Printf("%s @[%s::%s]\n", title, RedContent, consts.ColorGreen)
+	vfmt.Printf("%s @[%s::%s]\n", title, RedContent, utilcolor.ColorGreen)
 }
 
 // PrintlnBlue
@@ -32,7 +32,7 @@ func PrintlnGreen(title string, RedContent string) {
 // / @param title 标题
 // / @param colorContent 蓝色内容
 func PrintlnBlue(title string, RedContent string) {
-	vfmt.Printf("%s @[%s::%s]\n", title, RedContent, consts.ColorBlue)
+	vfmt.Printf("%s @[%s::%s]\n", title, RedContent, utilcolor.ColorBlue)
 }
 
 // PrintlnColor

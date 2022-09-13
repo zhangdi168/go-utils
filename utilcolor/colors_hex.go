@@ -3,7 +3,7 @@
 // @File: colors
 // @Version: 1.0.0
 // @Date: 2022/9/13 10:43
-package consts
+package utilcolor
 
 // Colors 颜色16进制代码
 const (

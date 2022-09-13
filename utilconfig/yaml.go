@@ -1,9 +1,13 @@
-// Package configs /**
-package configs
+// Package utilconfig
+// @Author: zhangdi
+// @Version: 1.0.0
+// @Date: 2022/9/13 10:05
+package utilconfig
 
 import (
-	"WechatSend/utils/tools"
 	"fmt"
+	"github.com/zhangdi168/go-utils/utilerror"
+	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"os"
 )
@@ -39,7 +43,7 @@ var Conf *Env
 const YamlPath_ string = "config.yaml"
 
 func InitConfigs() {
-	defer tools.GetErrorRecover()
+	defer utilerror.GetErrorRecover()
 	Conf = YamlRead(YamlPath_)
 }
 

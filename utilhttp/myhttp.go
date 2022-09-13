@@ -1,5 +1,8 @@
-// Package tools Package utils /**
-package tools
+// Package utilhttp
+// @Author: zhangdi
+// @Version: 1.0.0
+// @Date: 2022/9/13 10:05
+package utilhttp
 
 import (
 	"bytes"
